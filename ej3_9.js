@@ -24,7 +24,8 @@
 
 const planA = 1200;
 const planB = 950;
-let costo_poliza;
+let monto_base;
+let costo_poliza=0;
 
 
 let plan = prompt(
@@ -54,7 +55,7 @@ if (plan === "A") {
 } else {
   console.log("Debe ingresar un plan valido");
 }
-
+debugger;
 if (alcohol === "S"){
   costo_poliza += monto_base * (1 + 0.1);
 }else if (lentes === "S"){ 
