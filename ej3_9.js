@@ -25,8 +25,7 @@
 const planA = 1200;
 const planB = 950;
 let monto_base;
-let costo_poliza=0;
-
+let costo_poliza = 0;
 
 let plan = prompt(
   "Eliga su plan de cobertura. Conteste A para cobertura amplia o B para daños a terceros"
@@ -47,7 +46,6 @@ let mas40 = prompt(
   "¿Usted tiene 40 años o más?. Contest S para respuesta afirmativa o N para respuesta negativa"
 );
 
-
 if (plan === "A") {
   monto_base = planA;
 } else if (plan === "B") {
@@ -56,16 +54,25 @@ if (plan === "A") {
   console.log("Debe ingresar un plan valido");
 }
 debugger;
-if (alcohol === "S"){
+if (alcohol === "S") {
   costo_poliza += monto_base * (1 + 0.1);
-}else if (lentes === "S"){ 
+} else if (lentes === "S") {
   costo_poliza += monto_base * (1 + 0.05);
-}else if (enfermedad === "S"){
+} else if (enfermedad === "S") {
   costo_poliza += monto_base * (1 + 0.05);
-}else if (mas40 === "S") {
+} else if (mas40 === "S") {
   costo_poliza += monto_base * (1 + 0.2);
 } else {
-  costo_poliza += monto_base * (1 + 0.1);
+  if (
+    alcohol === "N" &&
+    lentes === "N" &&
+    enfermedad === "N" &&
+    mas40 === "N"
+  ) {
+    costo_poliza += monto_base * (1 + 0.1);
+  } else {
+    console.log("Debe ingresar solo S o N");
+  }
 }
 
 console.log(`El costo de la poliza es de: S/. ${costo_poliza}`);
