@@ -9,8 +9,8 @@
 // el algoritmo para determinar cuánto le cuesta a una persona
 // contratar una póliza.
 
-//Entrada: cobertura, alcohol,lentes,enfermedad,mayor40
-//Variable:cobertura, alcohol,lentes,enfermedad,mayor40
+//Entrada: plan, alcohol,lentes,enfermedad,mayor40
+//Variable:plan, alcohol,lentes,enfermedad,mayor40
 //constantes monto_base, porcentajes:
 //10% costo si bebe alcohol
 //5% si utiliza lentes
@@ -22,9 +22,14 @@
 //Variable: costo_poliza
 //Consideracion: se considerara 300 soles de monto base
 
-const monto_base = 300;
-let costo_poliza = 0;
+const planA = 1200;
+const planB = 950;
+let costo_poliza;
 
+
+let plan = prompt(
+  "Eliga su plan de cobertura. Conteste A para cobertura amplia o B para daños a terceros"
+);
 let alcohol = prompt(
   "Usted bebe frecuentemente. Contest S para respuesta afirmativa o N para respuesta negativa"
 );
@@ -41,13 +46,25 @@ let mas40 = prompt(
   "¿Usted tiene 40 años o más?. Contest S para respuesta afirmativa o N para respuesta negativa"
 );
 
-if (alcohol === "S") costo_poliza += monto_base * (1 + 0.1);
-if (lentes === "S") costo_poliza += monto_base * (1 + 0.05);
-if (enfermedad === "S") costo_poliza += monto_base * (1 + 0.05);
-if (mas40 === "S") {
+
+if (plan === "A") {
+  monto_base = planA;
+} else if (plan === "B") {
+  monto_base = planB;
+} else {
+  console.log("Debe ingresar un plan valido");
+}
+
+if (alcohol === "S"){
+  costo_poliza += monto_base * (1 + 0.1);
+}else if (lentes === "S"){ 
+  costo_poliza += monto_base * (1 + 0.05);
+}else if (enfermedad === "S"){
+  costo_poliza += monto_base * (1 + 0.05);
+}else if (mas40 === "S") {
   costo_poliza += monto_base * (1 + 0.2);
 } else {
   costo_poliza += monto_base * (1 + 0.1);
 }
 
-console.log(`El costo de la poliza es de: S/. ${costo_poliza}`)
+console.log(`El costo de la poliza es de: S/. ${costo_poliza}`);
