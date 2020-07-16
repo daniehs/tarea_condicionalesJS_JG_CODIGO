@@ -53,7 +53,6 @@ if (plan === "A") {
 } else {
   console.log("Debe ingresar un plan valido");
 }
-debugger;
 if (alcohol === "S") {
   costo_poliza += monto_base * (1 + 0.1);
 } else if (lentes === "S") {
