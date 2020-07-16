@@ -19,6 +19,9 @@
 //Salida: Mensaje de paquete que debe comprar (console.log)
 //Consideración el algoritmo dira que paquete comprar en base a la cantidad de dinero disponible
 //considerando solo un paquete de acuerdo al presupuesto
+let cant_dinero = +prompt(
+  "Ingrese la cantidad de dinero disponible:"
+);
 
 if (cant_dinero < 10000 && cant_dinero > 0) {
   console.log(
